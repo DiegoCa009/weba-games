@@ -5,6 +5,8 @@ import { build } from './helpers/buildCards';
 import { loses, match, state } from './helpers/sounds';
 
 
+//Separar funciones
+
 export default function App() {
   const [couples, setCouples] = useState([null, null]);
   const [clicks, setClicks] = useState({ count: 0, disabled: false });
