@@ -1,0 +1,18 @@
+:root {
+  background-color: #242424;
+  -webkit-tap-highlight-color: transparent;
+
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
