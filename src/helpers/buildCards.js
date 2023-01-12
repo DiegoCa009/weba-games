@@ -31,9 +31,9 @@ const build = (type="animals", rows = 3, columns = 4)=>{
     cards = shuffle(cards);
     const TABLE_STYLE = {
         display: 'grid',
-        gridTemplateColumns: `repeat(${columns},60px)`,
-        gridTemplateRows: `repeat(${rows},50px)`,      
-        gap: '20px',
+        gridTemplateColumns: `repeat(${columns},3rem)`,
+        gridTemplateRows: `repeat(${rows},3rem)`,      
+        gap: '10px',
         }
     return {
         TABLE_STYLE,

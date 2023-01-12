@@ -1,8 +1,9 @@
 import _ from 'underscore';
-import React, { useState, useEffect } from 'react';
-import './style.css';
+import { useEffect, useState } from 'react';
 import { build } from './helpers/buildCards';
 import { loses, match, state } from './helpers/sounds';
+import './app.css';
+import Menu from './interface/Menu';
 
 
 //Separar funciones
@@ -14,12 +15,13 @@ export default function App() {
   const [table_css, setTable_css] = useState({});
   
   useEffect(()=>{ 
-    
+
     const {TABLE_STYLE, cards}= build('princess',4,4);
     setTable_css(TABLE_STYLE)
     setCards(cards);
     setClicks({ count: 0, disabled: false });
     setCouples([null, null]);
+
   },[])
   
   
@@ -88,22 +90,26 @@ const hidde_img = {
   };
 
   return (
+    
     <div>
+      <Menu />
       <h3>Memorama</h3> 
       <div className="cards-container" style={{ ...table_css }}>
         {cardsTable.map((obj, i) => (
+          <div className='card-container animate__animated animate__bounceIn'>
           <img
             src={obj.name}
             onClick={obj.ctrl ? (e) => mostrar(obj, i) : null}
             style={{ ...obj.style }}
             key={i}
           />
-            
+          </div>  
         ))}
         
       </div>
 
       <button onClick={resetGame}>Reiniciar</button>
     </div>
+    
   );
 }
